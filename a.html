@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>百度一下你就知道</title>
+  </head>
+  <body>
+     <link href="center.css" rel="stylesheet"/>
+<div class="picture">
+<img src="baidu.jpg" class="selfie" />
+</div>
+<div class="up">
+
+<td><a href="#">新闻</a></td>
+<td><a href="#">网页</a></td>
+<td><a href="#">贴吧</a></td>
+<td><a href="#">知道</a></td>
+<td><a href="#">音乐</a></td>
+<td><a href="#">图片</a></td>
+<td><a href="#">视频</a></td>
+<td><a href="#">地图</a></td>
+</div>
+
+<div class="form">
+<form action="#" id="contact-form">
+<input type="text" id="subject" size="62" >
+        <input type="button" value="百度一下" onclick="validateInput()" />
+<br/>
+       
+      </form>
+</div>
+<div class="down">
+<td><a href="#">百科</a></td>
+<td><a href="#">文库</a></td>
+<td><a href="#">hao123</a></td>
+<td><a href="#">更多</a></td>
+
+</div>
+
+<div class="copyright">&copy; 版权所有</div>         
+      
+
+  <Script language="javascript">
+<!--
+window.onload = getMsg;
+window.onresize = resizeDiv;
+window.onerror = function(){}
+var divTop,divLeft,divWidth,divHeight,docHeight,docWidth,objTimer,i = 0;
+function getMsg()
+{
+try{
+divTop = parseInt(document.getElementById("eMeng").style.top,10)
+divLeft = parseInt(document.getElementById("eMeng").style.left,10)
+divHeight = parseInt(document.getElementById("eMeng").offsetHeight,10)
+divWidth = parseInt(document.getElementById("eMeng").offsetWidth,10)
+docWidth = document.documentElement.clientWidth;
+docHeight = document.documentElement.clientHeight;
+document.getElementById("eMeng").style.top = parseInt(document.documentElement.scrollTop,10) + docHeight + 10;// divHeight
+document.getElementById("eMeng").style.left = parseInt(document.documentElement.scrollLeft,10) + docWidth - divWidth
+document.getElementById("eMeng").style.visibility="visible"
+objTimer = window.setInterval("moveDiv()",10)
+}
+catch(e){}
+}
+
+function resizeDiv()
+{
+i+=1
+//if(i>1300) closeDiv() //不想自动关闭所以屏蔽这句，想自动关就把两个//去掉，1300表示时间
+try{
+divHeight = parseInt(document.getElementById("eMeng").offsetHeight,10)
+divWidth = parseInt(document.getElementById("eMeng").offsetWidth,10)
+docWidth = document.documentElement.clientWidth;
+docHeight = document.documentElement.clientHeight;
+document.getElementById("eMeng").style.top = docHeight - divHeight + parseInt(document.documentElement.scrollTop,10);
+document.getElementById("eMeng").style.left = docWidth - divWidth + parseInt(document.documentElement.scrollLeft,10)
+}
+catch(e){}
+}
+
+function moveDiv()
+{
+try
+{
+if(parseInt(document.getElementById("eMeng").style.top,10) <= (docHeight - divHeight + parseInt(document.documentElement.scrollTop,10)))
+{
+window.clearInterval(objTimer)
+objTimer = window.setInterval("resizeDiv()",1)
+}
+divTop = parseInt(document.getElementById("eMeng").style.top,10)
+document.getElementById("eMeng").style.top = divTop - 1
+}
+catch(e){}
+}
+function closeDiv()
+{
+document.getElementById('eMeng').innerHTML='';
+document.getElementById('eMeng').style.visibility='hidden';
+if(objTimer) window.clearInterval(objTimer)
+}
+-->
+</Script>
+<!--右下角弹出广告--JS代码  结束-->
+<!--右下角弹出广告--广告内容-->
+<DIV id=eMeng style="BORDER-RIGHT: #455690 1px solid; BORDER-TOP: #a6b4cf 1px solid; Z-INDEX:99999; LEFT: 0px; VISIBILITY: hidden; BORDER-LEFT: #a6b4cf 1px solid; WIDTH: 260px; BORDER-BOTTOM: #455690 1px solid; POSITION: absolute; TOP: 0px; HEIGHT: 198px; ">
+<TABLE style="BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid" cellSpacing=0 cellPadding=0 width="100%" bgColor=#AFDCF3 border=0>
+<TBODY>
+<TR>
+<TD style="background-image: url('图片地址'); padding-right: 1px; padding-bottom: 1px; width:254px; height:194px;" colSpan=2></TD>
+<TD width="25" valign=middle  align="center" style="font-weight: normal; font-size: 12px; width:25px;color: #ffffff; padding-left: 2px; padding-top: 10px ;background-color:#FB6413;"><span style="layout-flow:vertical-ideographic;font-weight:bold;" >点此关闭</span><span title=关闭 style="CURSOR: hand;color:white;font-size:14px;font-weight:bolder;margin-right:1px;" onclick=closeDiv() >X</span></TD>
+</TR>
+</TBODY>
+</TABLE>
+</DIV><!--右下角弹出广告--广告内容---结束-->
+ </body>
+</html>
